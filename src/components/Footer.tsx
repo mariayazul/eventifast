@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Facebook, Instagram, Twitter } from 'lucide-react';
+import Logo from './Logo';
 
 const Footer = () => {
   return (
@@ -9,10 +10,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-serif font-semibold mb-6">
-              <span className="text-gold-500">Fiesta</span>
-              <span className="text-purple-400">Planner</span>
-            </h3>
+            <div className="mb-6">
+              <Logo textColor="light" size="lg" />
+            </div>
             <p className="text-gray-400 mb-6">
               Transformamos tus sueños en eventos inolvidables, cuidando cada detalle para crear experiencias únicas.
             </p>
@@ -66,12 +66,6 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">Eventos Sociales</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Lanzamientos</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Experiencias Temáticas</a>
               </li>
             </ul>
           </div>

@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import Logo from './Logo';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,10 +15,9 @@ const Navbar = () => {
     <nav className="py-4 px-6 bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
       <div className="container-custom flex justify-between items-center">
         {/* Logo */}
-        <div className="text-2xl font-serif font-bold text-purple-700">
+        <div>
           <a href="/" className="flex items-center">
-            <span className="text-gold-500">Fiesta</span>
-            <span className="text-purple-600">Planner</span>
+            <Logo size="md" />
           </a>
         </div>
 
