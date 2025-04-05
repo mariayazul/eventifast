@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import RegistrationDialog from './RegistrationDialog';
 
 const HeroSection = () => {
   return (
@@ -26,9 +27,10 @@ const HeroSection = () => {
             <Button className="bg-purple-600 hover:bg-purple-700 text-white border-2 border-purple-600 hover:border-purple-700 px-8 py-6 text-lg">
               Nuestros Servicios
             </Button>
-            <Button variant="outline" className="bg-transparent text-white border-2 border-white hover:bg-white/10 px-8 py-6 text-lg">
-              Contactar Ahora
-            </Button>
+            <RegistrationDialog 
+              buttonText="Regístrate para Bodas y Fiestas" 
+              buttonClassName="bg-transparent text-white border-2 border-white hover:bg-white/10 px-8 py-6 text-lg"
+            />
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import Logo from './Logo';
+import RegistrationDialog from './RegistrationDialog';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,9 +43,10 @@ const Navbar = () => {
 
         {/* Contact Button */}
         <div className="hidden md:block">
-          <Button variant="default" className="bg-purple-600 hover:bg-purple-700 text-white">
-            Consulta Gratis
-          </Button>
+          <RegistrationDialog
+            buttonText="Regístrate Ahora"
+            buttonClassName="bg-purple-600 hover:bg-purple-700 text-white"
+          />
         </div>
 
         {/* Mobile Menu Button */}
@@ -99,13 +101,10 @@ const Navbar = () => {
             >
               Contacto
             </a>
-            <Button
-              variant="default"
-              className="bg-purple-600 hover:bg-purple-700 text-white w-full"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Consulta Gratis
-            </Button>
+            <RegistrationDialog
+              buttonText="Regístrate Ahora"
+              buttonClassName="bg-purple-600 hover:bg-purple-700 text-white w-full"
+            />
           </div>
         </div>
       )}
