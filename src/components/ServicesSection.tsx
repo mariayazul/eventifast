@@ -33,7 +33,7 @@ const ServicesSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Nuestros Servicios
           </h2>
-          <div className="w-20 h-1 bg-purple-600 mx-auto mb-6"></div>
+          <div className="w-20 h-0.5 bg-purple-500 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Con años de experiencia, ofrecemos una amplia gama de servicios de planificación y organización de eventos.
           </p>
@@ -41,16 +41,16 @@ const ServicesSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg border-none">
+            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg border-none bg-white">
               <div className="h-60 overflow-hidden">
                 <img 
                   src={service.image} 
                   alt={service.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
               <CardHeader>
-                <CardTitle className="text-xl font-serif">{service.title}</CardTitle>
+                <CardTitle className="text-xl font-serif text-purple-700">{service.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-gray-600">{service.description}</CardDescription>
