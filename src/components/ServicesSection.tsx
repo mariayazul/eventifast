@@ -22,16 +22,6 @@ const services = [
     title: "Eventos Sociales",
     description: "Organizamos galas, cenas de beneficencia y eventos sociales con un toque de elegancia y sofisticación.",
     image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
-  },
-  {
-    title: "Lanzamientos",
-    description: "Lanzamientos de productos y presentaciones que causan impacto y maximizan la visibilidad de tu marca.",
-    image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-  },
-  {
-    title: "Experiencias Temáticas",
-    description: "Creamos experiencias inmersivas y eventos temáticos que transportan a tus invitados a otro mundo.",
-    image: "https://images.unsplash.com/photo-1496337589254-7e19d01cec44?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
   }
 ];
 
@@ -49,7 +39,7 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
             <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg border-none">
               <div className="h-60 overflow-hidden">
