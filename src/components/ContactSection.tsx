@@ -11,7 +11,16 @@ import {
   CardHeader, 
   CardTitle 
 } from "@/components/ui/card";
-import { MapPin, Mail, Phone } from "lucide-react";
+import { 
+  MapPin, 
+  Mail, 
+  Phone, 
+  Facebook, 
+  Instagram, 
+  TiktokIcon, 
+  MessageSquare,
+  User
+} from "lucide-react";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -23,6 +32,7 @@ const ContactSection = () => {
     message: ''
   });
   const [isLoading, setIsLoading] = useState(false);
+  const [isRequestingPersonalContact, setIsRequestingPersonalContact] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -52,7 +62,18 @@ const ContactSection = () => {
         eventType: '',
         message: ''
       });
+      setIsRequestingPersonalContact(false);
     }, 1500);
+  };
+
+  const togglePersonalContact = () => {
+    setIsRequestingPersonalContact(!isRequestingPersonalContact);
+    if (!isRequestingPersonalContact) {
+      setFormData(prev => ({
+        ...prev,
+        message: prev.message + "\n\nSolicito contacto personal con un encargado."
+      }));
+    }
   };
 
   return (
@@ -110,6 +131,61 @@ const ContactSection = () => {
                     +52 (55) 8765 4321
                   </CardDescription>
                 </div>
+              </CardContent>
+            </Card>
+
+            {/* Social Media Cards */}
+            <Card className="bg-white shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <CardContent className="p-6">
+                <CardTitle className="text-lg mb-4">Síguenos en Redes Sociales</CardTitle>
+                <div className="grid grid-cols-2 gap-4">
+                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" 
+                    className="flex items-center p-3 rounded-md hover:bg-purple-50 transition-colors">
+                    <Facebook className="text-blue-600 mr-2 h-5 w-5" />
+                    <span className="text-sm">Facebook</span>
+                  </a>
+                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
+                    className="flex items-center p-3 rounded-md hover:bg-purple-50 transition-colors">
+                    <Instagram className="text-pink-600 mr-2 h-5 w-5" />
+                    <span className="text-sm">Instagram</span>
+                  </a>
+                  <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" 
+                    className="flex items-center p-3 rounded-md hover:bg-purple-50 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-black mr-2 h-5 w-5">
+                      <path d="M9 12a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/>
+                      <path d="M16 8v8"/>
+                      <path d="M16 12h-3"/>
+                      <path d="M21 8c0-5-4-5-4-5C7 3 7 9 7 9v7"/>
+                    </svg>
+                    <span className="text-sm">TikTok</span>
+                  </a>
+                  <a href="https://wa.me/525512345678" target="_blank" rel="noopener noreferrer" 
+                    className="flex items-center p-3 rounded-md hover:bg-purple-50 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-600 mr-2 h-5 w-5">
+                      <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/>
+                      <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1z"/>
+                    </svg>
+                    <span className="text-sm">WhatsApp</span>
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Personal Contact Card */}
+            <Card className="bg-purple-50 shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border-purple-200">
+              <CardContent className="p-6 flex flex-col items-center text-center">
+                <User className="text-purple-600 mb-3 h-8 w-8" />
+                <CardTitle className="text-lg mb-2">Contacto Personal</CardTitle>
+                <CardDescription className="mb-4">
+                  ¿Prefieres hablar directamente con un encargado de eventos? Solicita un contacto personal.
+                </CardDescription>
+                <Button 
+                  variant="outline" 
+                  className="border-purple-600 text-purple-600 hover:bg-purple-100 w-full"
+                  onClick={togglePersonalContact}
+                >
+                  {isRequestingPersonalContact ? "Solicitado ✓" : "Solicitar Contacto Personal"}
+                </Button>
               </CardContent>
             </Card>
           </div>
