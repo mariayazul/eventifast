@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Calendar, Clock, Users } from "lucide-react";
+import { Calendar, Clock } from "lucide-react";
 
 const AboutSection = () => {
   return (
@@ -32,13 +32,7 @@ const AboutSection = () => {
               Somos un equipo encargado de crear eventos memorables.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-sm">
-                <Users className="text-purple-600 mb-4 h-10 w-10" />
-                <h3 className="text-xl font-semibold mb-2">Equipo Experto</h3>
-                <p className="text-center text-gray-600">Profesionales con años de experiencia</p>
-              </div>
-              
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-sm">
                 <Calendar className="text-purple-600 mb-4 h-10 w-10" />
                 <h3 className="text-xl font-semibold mb-2">+500 Eventos</h3>
