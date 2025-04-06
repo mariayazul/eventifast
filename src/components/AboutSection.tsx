@@ -29,7 +29,7 @@ const AboutSection = () => {
             <div className="w-20 h-1 bg-purple-600 mb-8"></div>
             
             <p className="text-lg text-gray-600 mb-8">
-              Con más de 10 años de experiencia, somos un equipo de profesionales apasionados por crear eventos memorables. Nos especializamos en planificación detallada, diseño creativo y ejecución impecable.
+              Somos un equipo encargado de crear eventos memorables.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
